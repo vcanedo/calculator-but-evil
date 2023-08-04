@@ -1,0 +1,39 @@
+$button-bg-color: #f0f0f0;
+$button-border-color: #ccc;
+$button-color: #333;
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+#result {
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  font-size: 20px;
+  background-color: $button-bg-color;
+  border: 1px solid $button-border-color;
+  color: $button-color;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darken($button-bg-color, 10%);
+}
+
+button:active {
+  background-color: darken($button-bg-color, 20%);
+}
