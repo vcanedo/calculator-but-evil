@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Calculator, but evil</title>
-    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="calculator.css" id="calculator-style">
 </head>
 <body>
     <h2>Simple Calculator</h2>
@@ -28,8 +28,14 @@
     <br>
     <button onclick="calculate()">=</button>
 
+    <!-- Switch Light/Dark mode button -->
+    <button id="toggle-theme">Toggle Theme</button>
+
     <!-- Linked to calculator.js file -->
     <script src="calculator.js"></script>
+    <!-- Linked to theme-toggle.js file -->
+    <script src="theme-toggle.js"></script>
+
 
 </body>
 </html>

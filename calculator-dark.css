@@ -1,0 +1,24 @@
+/* CSS for dark mode */
+body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+#result {
+  background-color: #181818;
+  border: 1px solid #333;
+}
+
+button {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+button:active {
+  background-color: #777;
+}
