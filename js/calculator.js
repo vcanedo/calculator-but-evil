@@ -1,3 +1,4 @@
+// JS to execute calculator function
 function appendToResult(value) {
   document.getElementById('result').value += value;
 }

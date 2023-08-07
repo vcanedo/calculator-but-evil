@@ -1,0 +1,27 @@
+/* SCSS for dark mode */
+body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+#result {
+  background-color: #050505;
+  border: 1px solid #555;
+}
+
+button {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+button:active {
+  background-color: #777;
+}
+
+/*# sourceMappingURL=calculator-dark.css.map */

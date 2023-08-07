@@ -1,0 +1,33 @@
+/* SCSS for dark mode */
+$background-color: #121212;
+$text-color: #ffffff;
+$button-bg-color: #333;
+$button-border-color: #555;
+$button-color: #fff;
+$button-hover-color: #555;
+$button-active-color: #777;
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+#result {
+  background-color: darken($background-color, 5%);
+  border: 1px solid $button-border-color;
+}
+
+button {
+  background-color: $button-bg-color;
+  border: 1px solid $button-border-color;
+  color: $button-color;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: $button-hover-color;
+}
+
+button:active {
+  background-color: $button-active-color;
+}
