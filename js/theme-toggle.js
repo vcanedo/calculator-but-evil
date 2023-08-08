@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const calculatorStyle = document.getElementById('calculator-style');
 
   themeButton.addEventListener('click', () => {
-      if (calculatorStyle.getAttribute('href') === 'calculator.css') {
-          calculatorStyle.setAttribute('href', 'calculator-dark.css');
+      if (calculatorStyle.getAttribute('href') === 'css/calculator.css') {
+          calculatorStyle.setAttribute('href', 'css/calculator-dark.css');
       } else {
-          calculatorStyle.setAttribute('href', 'calculator.css');
+          calculatorStyle.setAttribute('href', 'css/calculator.css');
       }
   });
 });
