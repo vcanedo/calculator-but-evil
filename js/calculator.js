@@ -1,4 +1,21 @@
-// JS to execute calculator function
+// JS to execute calculator functions
+
+// evilResponse function to generate a random response
+function evilResponse(result) {
+  const evilResponses = [
+      "Congratulations, you've unlocked the secret to your misery: " + result,
+      "You must be truly proud of your mathematical prowess: " + result,
+      "Oh, another one? Here's your pitiful answer: " + result,
+      "Pathetic attempt, behold the outcome: " + result,
+      "Mathematically challenged, here's your reward: " + result,
+      "Your answer is as dull as your math skills: " + result,
+      "Did you really think you'd get anything different? " + result,
+      "Witness the fruit of your labor: " + result,
+      "I hope your self-esteem can handle this: " + result
+  ];
+
+  return evilResponses[Math.floor(Math.random() * evilResponses.length)];
+}
 
 let currentResult = '';  // New variable to store the current result
 let previousResult = ''; // New variable to store the previous result
@@ -19,7 +36,8 @@ function calculate() {
     const expression = document.getElementById('result').value;
     try {
         currentResult = eval(expression); // Calculate the current result
-        document.getElementById('result').value = currentResult;
+        const response = evilResponse(currentResult); // Get an evil response
+        document.getElementById('result').value = response;
     } catch (error) {
         document.getElementById('result').value = 'Error';
     }
