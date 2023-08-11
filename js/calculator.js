@@ -36,7 +36,8 @@ function calculate() {
     const expression = document.getElementById('result').value;
     try {
         currentResult = eval(expression); // Calculate the current result
-        document.getElementById('result').value = currentResult;
+        const response = evilResponse(currentResult); // Get an evil response
+        document.getElementById('result').value = response;
     } catch (error) {
         document.getElementById('result').value = 'Error';
     }
