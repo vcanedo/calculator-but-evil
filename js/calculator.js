@@ -1,5 +1,7 @@
 // JS to execute calculator functions
 
+// //////////////////////////////////////////////////
+// EVIL RESPONSES
 // evilResponse function to generate a random response
 function evilResponse(result) {
   const evilResponses = [
@@ -16,6 +18,9 @@ function evilResponse(result) {
 
     return evilResponses[Math.floor(Math.random() * evilResponses.length)];
 }
+
+// //////////////////////////////////////////////////
+// Retrieve the result element
 
 let currentResult = '';  // New variable to store the current result
 let previousResult = ''; // New variable to store the previous result
@@ -38,15 +43,23 @@ const buttonClickSound = document.getElementById('button-click-sound');
 const resultSound = document.getElementById('result-sound');
 
 // Define the sound functions
+// Click sound
 function playButtonClickSound() {
   buttonClickSound.currentTime = 0; // Reset sound to start
   buttonClickSound.play();
 }
 
+// Result sound
 function playResultSound() {
   resultSound.currentTime = 0; // Reset sound to start
-    resultSound.play();
+  resultSound.play();
   }
+
+// Error sound
+function playErrorSound() {
+  errorSound.currentTime = 0; // Reset sound to start
+  errorSound.play();
+}
 
   // Attach the sound functions to button clicks
   document.querySelectorAll('button').forEach(button => {
@@ -64,6 +77,7 @@ function calculate() {
         playResultSound(); // Play sound effect
     } catch (error) {
         document.getElementById('result').value = 'Error';
+        playErrorSound(); // Play sound effect
       }
     }
 
@@ -104,4 +118,3 @@ function calculate() {
       showPreviousResult();
     }
 });
-
