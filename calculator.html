@@ -12,6 +12,7 @@
     <input type="text" id="result" readonly>
     <br>
 
+    <!-- Calculator buttons -->
     <button onclick="clearResult(); playButtonClickSound()">C</button>
     <button onclick="appendToResult('1'); playButtonClickSound()">1</button>
     <button onclick="appendToResult('2'); playButtonClickSound()">2</button>
@@ -31,7 +32,10 @@
     <button onclick="appendToResult('/'); playButtonClickSound()">/</button>
     <br>
     <button onclick="calculate(); playButtonClickSound()">=</button>
+    <!-- ////////////////////////////////////////////////////////////////// -->
 
+    <!-- Toggle sound button -->
+    <button id="toggle-sound" onclick="toggleSound()">Toggle Sound</button>
 
     <!-- Switch Light/Dark mode button -->
     <button id="toggle-theme">Toggle Theme</button>

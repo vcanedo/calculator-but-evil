@@ -61,11 +61,21 @@ function playErrorSound() {
   errorSound.play();
 }
 
-  // Attach the sound functions to button clicks
-  document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', playButtonClickSound);
-  });
+// Attach the sound functions to button clicks
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', playButtonClickSound);
+});
 
+// Toggle sound
+let isSoundEnabled = true;
+
+function toggleSound() {
+    isSoundEnabled = !isSoundEnabled;
+    document.getElementById('toggle-sound').innerText = isSoundEnabled ? 'Mute' : 'Unmute';
+}
+
+// //////////////////////////////////////////////////
+// CALCULATOR FUNCTIONS
 // function to calculate the result
 function calculate() {
   previousResult = currentResult; // Store the current result before calculation
