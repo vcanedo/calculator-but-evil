@@ -82,8 +82,8 @@ function calculate() {
   const expression = document.getElementById('result').value;
   try {
         currentResult = eval(expression); // Calculate the current result
-        const response = evilResponse(currentResult); // Get an evil response
-        document.getElementById('result').value = response;
+        document.getElementById('result').className = 'animated';
+        document.getElementById('result').value = evilResponse(currentResult);
         playResultSound(); // Play sound effect
     } catch (error) {
         document.getElementById('result').value = 'Error';
