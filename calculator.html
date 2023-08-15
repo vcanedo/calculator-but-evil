@@ -9,6 +9,7 @@
     <audio id="error" src="assets/error.mp3"></audio>
 </head>
 <body>
+
     <h2>Simple Calculator</h2>
     <input class="animated" type="text" id="result" readonly>
     <br>
@@ -38,8 +39,15 @@
     <!-- Toggle sound button -->
     <button id="toggle-sound animated" onclick="toggleSound(); playButtonClickSound()">Toggle Sound</button>
 
+    <!-- History log -->
+    <div id="history-log">
+      <h3>History</h3>
+      <ul id="history-list"></ul>
+    </div>
+
     <!-- Switch Light/Dark mode button -->
     <button id="toggle-theme animated" onclick="playButtonClickSound()">Toggle Theme</button>
+
     <!-- Previous result button -->
     <button id="previous-result animated" onclick="playButtonClickSound()">Previous Result</button>
 
@@ -48,7 +56,6 @@
     <script src="js/calculator.js"></script>
     <!-- Linked to theme-toggle.js file -->
     <script src="js/theme-toggle.js"></script>
-
 
 </body>
 </html>

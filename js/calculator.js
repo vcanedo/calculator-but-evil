@@ -75,8 +75,20 @@ function toggleSound() {
 }
 
 // //////////////////////////////////////////////////
+// HISTORY LOG
+// Retrieve the history list element
+const historyList = document.getElementById('history-list');
+
+function addToHistory(expression, result) {
+    const historyItem = document.createElement('li');
+    historyItem.textContent = `${expression} = ${result}`;
+    historyList.appendChild(historyItem);
+}
+
+// //////////////////////////////////////////////////
 // CALCULATOR FUNCTIONS
 // function to calculate the result
+
 function calculate() {
   previousResult = currentResult; // Store the current result before calculation
   const expression = document.getElementById('result').value;
@@ -85,6 +97,7 @@ function calculate() {
         document.getElementById('result').className = 'animated';
         document.getElementById('result').value = evilResponse(currentResult);
         playResultSound(); // Play sound effect
+        addToHistory(expression, evilResult); // Add the calculation to the history log
     } catch (error) {
         document.getElementById('result').value = 'Error';
         playErrorSound(); // Play sound effect
