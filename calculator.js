@@ -40,8 +40,9 @@ function clearResult() {
 // SOUND EFFECTS
 // Get the audio elements
 
-const buttonClickSound = document.getElementById('button-click-sound');
-const resultSound = document.getElementById('result-sound');
+const buttonClickSound = document.getElementById('click');
+const resultSound = document.getElementById('result');
+const errorSound = document.getElementById('error');
 
 // Define the sound functions
 // Click sound
