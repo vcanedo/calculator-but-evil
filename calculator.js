@@ -99,7 +99,7 @@ function calculate() {
         document.getElementById('result').className = 'animated';
         document.getElementById('result').value = evilResponse(currentResult);
         playResultSound(); // Play sound effect
-        addToHistory(expression, evilResult); // Add the calculation to the history log
+        addToHistory(expression, currentResult); // Add the calculation to the history log
     } catch (error) {
         document.getElementById('result').value = 'Error';
         playErrorSound(); // Play sound effect
