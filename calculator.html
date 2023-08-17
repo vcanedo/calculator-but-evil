@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Calculator, but evil</title>
-    <link rel="stylesheet" href="css/calculator.css" id="calculator-style">
-    <link rel="stylesheet" href="css/calculator-animations.css">
+    <link rel="stylesheet" href="style/calculator.css" id="calculator-style">
+    <link rel="stylesheet" href="style/calculator-animations.css">
     <audio id="click" src="assets/click.mp3"></audio>
     <audio id="result" src="assets/result.mp3"></audio>
     <audio id="error" src="assets/error.mp3"></audio>
@@ -37,7 +37,7 @@
     <!-- ////////////////////////////////////////////////////////////////// -->
 
     <!-- Toggle sound button -->
-    <button id="toggle-sound animated" onclick="toggleSound(); playButtonClickSound()">Toggle Sound</button>
+    <button id="toggle-sound" class="animated" onclick="toggleSound(); playButtonClickSound()">Mute</button>
 
     <!-- History log -->
     <div id="history-log">
@@ -46,16 +46,16 @@
     </div>
 
     <!-- Switch Light/Dark mode button -->
-    <button id="toggle-theme animated" onclick="playButtonClickSound()">Toggle Theme</button>
+    <button id="toggle-theme" class="animated" onclick="playButtonClickSound()">Toggle Theme</button>
 
     <!-- Previous result button -->
-    <button id="previous-result animated" onclick="playButtonClickSound()">Previous Result</button>
+    <button id="previous-result" class="animated" onclick="playButtonClickSound()">Previous Result</button>
 
 
     <!-- Linked to calculator.js file -->
-    <script src="js/calculator.js"></script>
+    <script src="calculator.js"></script>
     <!-- Linked to theme-toggle.js file -->
-    <script src="js/theme-toggle.js"></script>
+    <script src="theme-toggle.js"></script>
 
 </body>
 </html>

@@ -3,6 +3,7 @@
 // //////////////////////////////////////////////////
 // EVIL RESPONSES
 // evilResponse function to generate a random response
+console.log('Hello from calculator.js');
 function evilResponse(result) {
   const evilResponses = [
       "Congratulations, you've unlocked the secret to your misery: " + result,
@@ -39,8 +40,9 @@ function clearResult() {
 // SOUND EFFECTS
 // Get the audio elements
 
-const buttonClickSound = document.getElementById('button-click-sound');
-const resultSound = document.getElementById('result-sound');
+const buttonClickSound = document.getElementById('click');
+const resultSound = document.getElementById('result');
+const errorSound = document.getElementById('error');
 
 // Define the sound functions
 // Click sound
@@ -70,10 +72,17 @@ document.querySelectorAll('button').forEach(button => {
 let isSoundEnabled = true;
 
 function toggleSound() {
-    isSoundEnabled = !isSoundEnabled;
-    document.getElementById('toggle-sound').innerText = isSoundEnabled ? 'Mute' : 'Unmute';
-}
+  isSoundEnabled = !isSoundEnabled;
 
+  // Mute or unmute the audio elements based on the isSoundEnabled variable
+  buttonClickSound.muted = !isSoundEnabled;
+  resultSound.muted = !isSoundEnabled;
+  errorSound.muted = !isSoundEnabled;
+
+  // Update the button text
+  const toggleSoundButton = document.getElementById('toggle-sound');
+  toggleSoundButton.innerText = isSoundEnabled ? 'Mute' : 'Unmute';
+}
 // //////////////////////////////////////////////////
 // HISTORY LOG
 // Retrieve the history list element
@@ -97,7 +106,7 @@ function calculate() {
         document.getElementById('result').className = 'animated';
         document.getElementById('result').value = evilResponse(currentResult);
         playResultSound(); // Play sound effect
-        addToHistory(expression, evilResult); // Add the calculation to the history log
+        addToHistory(expression, currentResult); // Add the calculation to the history log
     } catch (error) {
         document.getElementById('result').value = 'Error';
         playErrorSound(); // Play sound effect
