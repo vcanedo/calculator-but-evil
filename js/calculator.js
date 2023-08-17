@@ -3,6 +3,7 @@
 // //////////////////////////////////////////////////
 // EVIL RESPONSES
 // evilResponse function to generate a random response
+console.log('Hello from calculator.js');
 function evilResponse(result) {
   const evilResponses = [
       "Congratulations, you've unlocked the secret to your misery: " + result,
