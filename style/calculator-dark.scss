@@ -1,60 +1,65 @@
 /* SCSS for dark mode */
-$background-color: #121212;
-$text-color: #ffffff;
-$button-bg-color: #333;
-$button-border-color: #555;
-$button-color: #fff;
-$button-hover-color: #555;
-$button-active-color: #777;
-
 body {
-  background-color: $background-color;
-  color: $text-color;
-}
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #333;
+  color: #f0f0f0;
 
-#result {
-  background-color: darken($background-color, 5%);
-  border: 1px solid $button-border-color;
-}
+  h2 {
+    margin-bottom: 20px;
+  }
 
-button {
-  background-color: $button-bg-color;
-  border: 1px solid $button-border-color;
-  color: $button-color;
-  cursor: pointer;
-}
+  #result {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    text-align: right;
+    margin-bottom: 10px;
+  }
 
-button:hover {
-  background-color: $button-hover-color;
-}
+  button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    font-size: 20px;
+    background-color: #444;
+    border: 1px solid #555;
+    color: #f0f0f0;
+    cursor: pointer;
 
-button:active {
-  background-color: $button-active-color;
-}
+    &:hover {
+      background-color: #555;
+    }
 
-#history-log {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #222;
-  border: 1px solid #444;
-}
+    &:active {
+      background-color: #666;
+    }
+  }
 
-#history-log h3 {
-  margin-bottom: 10px;
-  color: #ff6666;
-}
+  #history-log {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #444;
+    border: 1px solid #555;
 
-#history-list {
-  list-style: none;
-  padding: 0;
-}
+    h3 {
+      margin-bottom: 10px;
+      color: #f0f0f0;
+    }
 
-#history-list li {
-  margin-bottom: 5px;
-  padding: 5px;
-  background-color: #444;
-  border: 1px solid #666;
-  border-radius: 4px;
-  font-size: 14px;
-  color: $button-color;
+    #history-list {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 5px;
+        padding: 5px;
+        background-color: #555;
+        border: 1px solid #666;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #f0f0f0;
+      }
+    }
+  }
 }

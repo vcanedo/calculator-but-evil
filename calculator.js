@@ -72,10 +72,17 @@ document.querySelectorAll('button').forEach(button => {
 let isSoundEnabled = true;
 
 function toggleSound() {
-    isSoundEnabled = !isSoundEnabled;
-    document.getElementById('toggle-sound').innerText = isSoundEnabled ? 'Mute' : 'Unmute';
-}
+  isSoundEnabled = !isSoundEnabled;
 
+  // Mute or unmute the audio elements based on the isSoundEnabled variable
+  buttonClickSound.muted = !isSoundEnabled;
+  resultSound.muted = !isSoundEnabled;
+  errorSound.muted = !isSoundEnabled;
+
+  // Update the button text
+  const toggleSoundButton = document.getElementById('toggle-sound');
+  toggleSoundButton.innerText = isSoundEnabled ? 'Mute' : 'Unmute';
+}
 // //////////////////////////////////////////////////
 // HISTORY LOG
 // Retrieve the history list element
