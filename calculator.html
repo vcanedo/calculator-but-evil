@@ -34,22 +34,20 @@
     <button class="animated" onclick="appendToResult('/'); playButtonClickSound()">/</button>
     <br>
     <button class="animated" onclick="calculate(); playButtonClickSound()">=</button>
-    <!-- ////////////////////////////////////////////////////////////////// -->
-
     <!-- Toggle sound button -->
     <button id="toggle-sound" class="animated" onclick="toggleSound(); playButtonClickSound()">Mute</button>
-
+    <!-- Switch Light/Dark mode button -->
+    <button id="toggle-theme" class="animated" onclick="playButtonClickSound()">Toggle Theme</button>
+    <!-- Previous result button -->
+    <button id="previous-result" class="animated" onclick="playButtonClickSound()">Previous Result</button>
+    <br>
+    <!-- ////////////////////////////////////////////////////////////////// -->
     <!-- History log -->
     <div id="history-log">
       <h3>History</h3>
       <ul id="history-list"></ul>
     </div>
 
-    <!-- Switch Light/Dark mode button -->
-    <button id="toggle-theme" class="animated" onclick="playButtonClickSound()">Toggle Theme</button>
-
-    <!-- Previous result button -->
-    <button id="previous-result" class="animated" onclick="playButtonClickSound()">Previous Result</button>
 
 
     <!-- Linked to calculator.js file -->
