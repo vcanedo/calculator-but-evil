@@ -27,7 +27,12 @@ let previousResult = ''; // New variable to store the previous result
 
 // function to append the value to the result
 function appendToResult(value) {
-  document.getElementById('result').value += value;
+  console.log(value);
+  const resultInput = document.getElementById('result');
+  console.log(value);
+  console.log(resultInput);
+  resultInput.value += value;
+  console.log(resultInput.value);
 }
 
 // function to clear the result
@@ -39,9 +44,9 @@ function clearResult() {
 // SOUND EFFECTS
 // Get the audio elements
 
-const buttonClickSound = document.getElementById('click');
-const resultSound = document.getElementById('result');
-const errorSound = document.getElementById('error');
+const buttonClickSound = document.getElementById('click-sound');
+const resultSound = document.getElementById('result-sound');
+const errorSound = document.getElementById('error-sound');
 
 // Define the sound functions
 // Click sound
