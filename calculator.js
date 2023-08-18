@@ -108,6 +108,7 @@ function calculate() {
         addToHistory(expression, currentResult); // Add the calculation to the history log
     } catch (error) {
         document.getElementById('result').value = 'Error';
+        document.getElementById('evil-response').textContent = 'You clearly have no idea what you\'re doing. Try again.';
         playErrorSound(); // Play sound effect
       }
     }
