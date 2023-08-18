@@ -4,13 +4,15 @@
     <title>Calculator, but evil</title>
     <link rel="stylesheet" href="style/calculator.css" id="calculator-style">
     <link rel="stylesheet" href="style/calculator-animations.css">
-    <audio id="click" src="assets/click.mp3"></audio>
-    <audio id="result" src="assets/result.mp3"></audio>
-    <audio id="error" src="assets/error.mp3"></audio>
+    <audio id="click-sound" src="assets/click.mp3"></audio>
+    <audio id="result-sound" src="assets/result.mp3"></audio>
+    <audio id="error-sound" src="assets/error.mp3"></audio>
 </head>
 <body>
 
-    <h2>Simple Calculator</h2>
+    <h2>Calculator, but evil</h2>
+    <div id="evil-response"></div>
+    <br>
     <input class="animated" type="text" id="result" readonly>
     <br>
 
@@ -34,22 +36,20 @@
     <button class="animated" onclick="appendToResult('/'); playButtonClickSound()">/</button>
     <br>
     <button class="animated" onclick="calculate(); playButtonClickSound()">=</button>
-    <!-- ////////////////////////////////////////////////////////////////// -->
-
     <!-- Toggle sound button -->
     <button id="toggle-sound" class="animated" onclick="toggleSound(); playButtonClickSound()">Mute</button>
-
+    <!-- Switch Light/Dark mode button -->
+    <button id="toggle-theme" class="animated" onclick="playButtonClickSound()">Toggle Theme</button>
+    <!-- Previous result button -->
+    <button id="previous-result" class="animated" onclick="playButtonClickSound()">Previous Result</button>
+    <br>
+    <!-- ////////////////////////////////////////////////////////////////// -->
     <!-- History log -->
     <div id="history-log">
       <h3>History</h3>
       <ul id="history-list"></ul>
     </div>
 
-    <!-- Switch Light/Dark mode button -->
-    <button id="toggle-theme" class="animated" onclick="playButtonClickSound()">Toggle Theme</button>
-
-    <!-- Previous result button -->
-    <button id="previous-result" class="animated" onclick="playButtonClickSound()">Previous Result</button>
 
 
     <!-- Linked to calculator.js file -->

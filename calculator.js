@@ -3,18 +3,17 @@
 // //////////////////////////////////////////////////
 // EVIL RESPONSES
 // evilResponse function to generate a random response
-console.log('Hello from calculator.js');
-function evilResponse(result) {
+function evilResponse() {
   const evilResponses = [
-      "Congratulations, you've unlocked the secret to your misery: " + result,
-      "You must be truly proud of your mathematical prowess: " + result,
-      "Oh, another one? Here's your pitiful answer: " + result,
-      "Pathetic attempt, behold the outcome: " + result,
-      "Mathematically challenged, here's your reward: " + result,
-      "Your answer is as dull as your math skills: " + result,
-      "Did you really think you'd get anything different? " + result,
-      "Witness the fruit of your labor: " + result,
-      "I hope your self-esteem can handle this: " + result
+      "Congratulations, you've unlocked the secret to your misery: ",
+      "You must be truly proud of your mathematical prowess: ",
+      "Oh, another one? Here's your pitiful answer: ",
+      "Pathetic attempt, behold the outcome: ",
+      "Mathematically challenged, here's your reward: ",
+      "Your answer is as dull as your math skills: ",
+      "Did you really think you'd get anything different? ",
+      "Witness the fruit of your labor: ",
+      "I hope your self-esteem can handle this: "
     ];
 
     return evilResponses[Math.floor(Math.random() * evilResponses.length)];
@@ -28,7 +27,12 @@ let previousResult = ''; // New variable to store the previous result
 
 // function to append the value to the result
 function appendToResult(value) {
-  document.getElementById('result').value += value;
+  console.log(value);
+  const resultInput = document.getElementById('result');
+  console.log(value);
+  console.log(resultInput);
+  resultInput.value += value;
+  console.log(resultInput.value);
 }
 
 // function to clear the result
@@ -40,9 +44,9 @@ function clearResult() {
 // SOUND EFFECTS
 // Get the audio elements
 
-const buttonClickSound = document.getElementById('click');
-const resultSound = document.getElementById('result');
-const errorSound = document.getElementById('error');
+const buttonClickSound = document.getElementById('click-sound');
+const resultSound = document.getElementById('result-sound');
+const errorSound = document.getElementById('error-sound');
 
 // Define the sound functions
 // Click sound
@@ -104,11 +108,12 @@ function calculate() {
   try {
         currentResult = eval(expression); // Calculate the current result
         document.getElementById('result').className = 'animated';
-        document.getElementById('result').value = evilResponse(currentResult);
+        document.getElementById('evil-response').textContent = evilResponse();
         playResultSound(); // Play sound effect
         addToHistory(expression, currentResult); // Add the calculation to the history log
     } catch (error) {
-        document.getElementById('result').value = 'Error';
+        document.getElementById('result').value = '';
+        document.getElementById('evil-response').textContent = 'You clearly have no idea what you\'re doing. Try again.';
         playErrorSound(); // Play sound effect
       }
     }
