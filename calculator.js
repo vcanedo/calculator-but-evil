@@ -3,18 +3,17 @@
 // //////////////////////////////////////////////////
 // EVIL RESPONSES
 // evilResponse function to generate a random response
-console.log('Hello from calculator.js');
-function evilResponse(result) {
+function evilResponse() {
   const evilResponses = [
-      "Congratulations, you've unlocked the secret to your misery: " + result,
-      "You must be truly proud of your mathematical prowess: " + result,
-      "Oh, another one? Here's your pitiful answer: " + result,
-      "Pathetic attempt, behold the outcome: " + result,
-      "Mathematically challenged, here's your reward: " + result,
-      "Your answer is as dull as your math skills: " + result,
-      "Did you really think you'd get anything different? " + result,
-      "Witness the fruit of your labor: " + result,
-      "I hope your self-esteem can handle this: " + result
+      "Congratulations, you've unlocked the secret to your misery: ",
+      "You must be truly proud of your mathematical prowess: ",
+      "Oh, another one? Here's your pitiful answer: ",
+      "Pathetic attempt, behold the outcome: ",
+      "Mathematically challenged, here's your reward: ",
+      "Your answer is as dull as your math skills: ",
+      "Did you really think you'd get anything different? ",
+      "Witness the fruit of your labor: ",
+      "I hope your self-esteem can handle this: "
     ];
 
     return evilResponses[Math.floor(Math.random() * evilResponses.length)];
@@ -104,7 +103,7 @@ function calculate() {
   try {
         currentResult = eval(expression); // Calculate the current result
         document.getElementById('result').className = 'animated';
-        document.getElementById('result').value = evilResponse(currentResult);
+        document.getElementById('evil-response').textContent = evilResponse();
         playResultSound(); // Play sound effect
         addToHistory(expression, currentResult); // Add the calculation to the history log
     } catch (error) {
