@@ -83,9 +83,9 @@ function toggleSound() {
   resultSound.muted = !isSoundEnabled;
   errorSound.muted = !isSoundEnabled;
 
-  // Update the button text
+  // Update the button icon
   const toggleSoundButton = document.getElementById('toggle-sound');
-  toggleSoundButton.innerText = isSoundEnabled ? 'Mute' : 'Unmute';
+  toggleSoundButton.innerHTML = isSoundEnabled ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
 }
 // //////////////////////////////////////////////////
 // HISTORY LOG

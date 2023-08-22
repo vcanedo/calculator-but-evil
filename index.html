@@ -2,8 +2,12 @@
 <html>
 <head>
     <title>Calculator, but evil</title>
+    <!-- Link to stylesheet -->
     <link rel="stylesheet" href="style/calculator.css" id="calculator-style">
     <link rel="stylesheet" href="style/calculator-animations.css">
+    <!-- Link to fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to sound effects -->
     <audio id="click-sound" src="assets/click.mp3"></audio>
     <audio id="result-sound" src="assets/result.mp3"></audio>
     <audio id="error-sound" src="assets/error.mp3"></audio>
@@ -37,11 +41,17 @@
     <br>
     <button class="animated" onclick="calculate(); playButtonClickSound()">=</button>
     <!-- Toggle sound button -->
-    <button id="toggle-sound" class="animated" onclick="toggleSound(); playButtonClickSound()">Mute</button>
+    <button id="toggle-sound" class="animated" onclick="toggleSound(); playButtonClickSound()">
+      <i class="fas fa-volume-up"></i>
+    </button>
     <!-- Switch Light/Dark mode button -->
-    <button id="toggle-theme" class="animated" onclick="playButtonClickSound()">Toggle Theme</button>
+    <button id="toggle-theme" class="animated" onclick="playButtonClickSound()">
+      <i class="fa-solid fa-lightbulb"></i>
+    </button>
     <!-- Previous result button -->
-    <button id="previous-result" class="animated" onclick="playButtonClickSound()">Previous Result</button>
+    <button id="previous-result" class="animated" onclick="playButtonClickSound()">
+      <i class="fas fa-history"></i>
+    </button>
     <br>
     <!-- ////////////////////////////////////////////////////////////////// -->
     <!-- History log -->

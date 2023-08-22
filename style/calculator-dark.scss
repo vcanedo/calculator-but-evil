@@ -18,7 +18,8 @@ body {
   }
 
   button {
-    width: 40px;
+    min-width: 40px;
+    width: auto;
     height: 40px;
     margin: 5px;
     font-size: 20px;
