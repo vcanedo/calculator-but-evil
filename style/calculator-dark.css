@@ -39,6 +39,7 @@ body #history-log {
   border: 1px solid #555;
   width: 300px;
   margin: 20px auto;
+  border-radius: 5px;
 }
 body #history-log h3 {
   margin-bottom: 10px;
@@ -47,6 +48,7 @@ body #history-log h3 {
 body #history-log #history-list {
   list-style: none;
   padding: 0;
+  border-radius: 5px;
 }
 body #history-log #history-list li {
   margin-bottom: 5px;
