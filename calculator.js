@@ -3,17 +3,81 @@
 // //////////////////////////////////////////////////
 // EVIL RESPONSES
 // evilResponse function to generate a random response
-function evilResponse() {
+
+
+function evilResponse(result) {
+
+  if (result === 666) {
+    return "You've summoned evil with a result of 666!";
+  }
+
+  if (result === 0) {
+    return "Ah, I see you're trying to see how much you're worth...";
+  }
+
+  if (result < 0) {
+    return "Negative result? How unsurprising.";
+  }
+
+  if (result % 7 === 0) {
+    return "Your result is a multiple of 7. Lucky you!";
+  }
+
+  if (result % 69 === 0) {
+    return "Your result is a multiple of 69. Nice.";
+  }
+
+  if (result === 69) {
+    return "Ha! Nice.";
+  }
+  if (currentResult < 20 && currentResult >= 1) {
+    // Display the initial message
+    setTimeout(function () {
+      // Wait for 5 seconds before clearing the calculator and displaying the next message
+      document.getElementById('evil-response').textContent = "You've brought this upon yourself.";
+      clearResult();
+      const buttons = document.getElementsByTagName('button');
+      const log = document.getElementById('history-log');
+      const result = document.getElementById('result');
+      const title = document.querySelector('h1');
+
+      const allTags = [...buttons, log, result, title];
+
+      // Iterate through the buttons and hide them
+      for (let i = 0; i < allTags.length; i++) {
+        allTags[i].style.display = 'none';
+      }
+
+      // After 3 seconds, display the final message
+      setTimeout(function () {
+        document.getElementById('evil-response').textContent = "Bye";
+
+        // After 3 seconds, clear the message
+        setTimeout(function () {
+          document.getElementById('evil-response').textContent = "";
+        }, 1000);
+      }, 2000);
+    }, 3000);
+
+    // Return a message (optional)
+    return "No shot you had to calculate that...";
+  }
+
+
+
+
   const evilResponses = [
-      "Congratulations, you've unlocked the secret to your misery: ",
-      "You must be truly proud of your mathematical prowess: ",
-      "Oh, another one? Here's your pitiful answer: ",
-      "Pathetic attempt, behold the outcome: ",
-      "Mathematically challenged, here's your reward: ",
-      "Your answer is as dull as your math skills: ",
-      "Did you really think you'd get anything different? ",
-      "Witness the fruit of your labor: ",
-      "I hope your self-esteem can handle this: "
+      "Congratulations, you've unlocked the secret to your misery",
+      "You must be truly proud of your mathematical prowess",
+      "Oh, another one? Here's your pitiful answer:",
+      "Pathetic attempt, behold the outcome:",
+      "Mathematically challenged, here's your reward:",
+      "Your answer is as dull as your math skills:",
+      "Did you really think you'd get anything different?",
+      "Witness the fruit of your labor:",
+      "I hope your self-esteem can handle this:",
+      "You're not very good at this, are you?",
+      "You really had to ask me for this?"
     ];
 
     return evilResponses[Math.floor(Math.random() * evilResponses.length)];
@@ -104,11 +168,12 @@ function addToHistory(expression, result) {
 
 function calculate() {
   previousResult = currentResult; // Store the current result before calculation
-  const expression = document.getElementById('result').value;
+  const expression = document.getElementById('result').value; // Get the expression from the result field
   try {
         currentResult = eval(expression); // Calculate the current result
         document.getElementById('result').className = 'animated';
-        document.getElementById('evil-response').textContent = evilResponse();
+        document.getElementById('evil-response').textContent = evilResponse(currentResult);
+
         playResultSound(); // Play sound effect
         addToHistory(expression, currentResult); // Add the calculation to the history log
     } catch (error) {
