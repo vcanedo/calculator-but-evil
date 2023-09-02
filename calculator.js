@@ -34,7 +34,7 @@ const evilResponse = (result) => {
   if (currentResult < 20 && currentResult >= 1) {
     return smallNumberResponse();
   }
-  
+
   const evilResponses = [
       "Congratulations, you've unlocked the secret to your misery",
       "You must be truly proud of your mathematical prowess",
@@ -91,7 +91,7 @@ let currentResult = '';  // New variable to store the current result
 let previousResult = ''; // New variable to store the previous result
 
 // function to append the value to the result
-function appendToResult(value) {
+const appendToResult = (value) => {
   console.log(value);
   const resultInput = document.getElementById('result');
   console.log(value);
@@ -101,7 +101,7 @@ function appendToResult(value) {
 }
 
 // function to clear the result
-function clearResult() {
+const clearResult = () => {
   document.getElementById('result').value = '';
 }
 
@@ -115,19 +115,19 @@ const errorSound = document.getElementById('error-sound');
 
 // Define the sound functions
 // Click sound
-function playButtonClickSound() {
+const playButtonClickSound = () => {
   buttonClickSound.currentTime = 0; // Reset sound to start
   buttonClickSound.play();
 }
 
 // Result sound
-function playResultSound() {
+const playResultSound = () => {
   resultSound.currentTime = 0; // Reset sound to start
   resultSound.play();
   }
 
 // Error sound
-function playErrorSound() {
+const playErrorSound = () => {
   errorSound.currentTime = 0; // Reset sound to start
   errorSound.play();
 }
@@ -140,7 +140,7 @@ document.querySelectorAll('button').forEach(button => {
 // Toggle sound
 let isSoundEnabled = true;
 
-function toggleSound() {
+const toggleSound = () => {
   isSoundEnabled = !isSoundEnabled;
 
   // Mute or unmute the audio elements based on the isSoundEnabled variable
@@ -157,7 +157,7 @@ function toggleSound() {
 // Retrieve the history list element
 const historyList = document.getElementById('history-list');
 
-function addToHistory(expression, result) {
+const addToHistory = (expression, result) => {
     const historyItem = document.createElement('li');
     historyItem.textContent = `${expression} = ${result}`;
     historyList.appendChild(historyItem);
@@ -167,7 +167,7 @@ function addToHistory(expression, result) {
 // CALCULATOR FUNCTIONS
 // function to calculate the result
 
-function calculate() {
+const calculate = () => {
   previousResult = currentResult; // Store the current result before calculation
   const expression = document.getElementById('result').value; // Get the expression from the result field
   try {
@@ -185,7 +185,7 @@ function calculate() {
     }
 
     // New function to show the previous result
-    function showPreviousResult() {
+    const showPreviousResult = () => {
       document.getElementById('result').value = previousResult;
     }
 
@@ -203,6 +203,17 @@ function calculate() {
       } else {
         appendToResult(key);
       }
+  }
+
+  // Calculate the result when the = key is pressed
+  if (key === '=' || key === 'Enter') {
+    calculate();
+  }
+
+  // Backspace key
+  if (key === 'Backspace' || key === 'Delete') {
+    const resultInput = document.getElementById('result');
+    resultInput.value = resultInput.value.slice(0, -1);
   }
 
   // Clear the result when the Escape key is pressed
