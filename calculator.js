@@ -5,7 +5,7 @@
 // evilResponse function to generate a random response
 
 
-function evilResponse(result) {
+const evilResponse = (result) => {
 
   if (result === 666) {
     return "You've summoned evil with a result of 666!";
@@ -30,42 +30,11 @@ function evilResponse(result) {
   if (result === 69) {
     return "Ha! Nice.";
   }
+
   if (currentResult < 20 && currentResult >= 1) {
-    // Display the initial message
-    setTimeout(function () {
-      // Wait for 5 seconds before clearing the calculator and displaying the next message
-      document.getElementById('evil-response').textContent = "You've brought this upon yourself.";
-      clearResult();
-      const buttons = document.getElementsByTagName('button');
-      const log = document.getElementById('history-log');
-      const result = document.getElementById('result');
-      const title = document.querySelector('h1');
-
-      const allTags = [...buttons, log, result, title];
-
-      // Iterate through the buttons and hide them
-      for (let i = 0; i < allTags.length; i++) {
-        allTags[i].style.display = 'none';
-      }
-
-      // After 3 seconds, display the final message
-      setTimeout(function () {
-        document.getElementById('evil-response').textContent = "Bye";
-
-        // After 3 seconds, clear the message
-        setTimeout(function () {
-          document.getElementById('evil-response').textContent = "";
-        }, 1000);
-      }, 2000);
-    }, 3000);
-
-    // Return a message (optional)
-    return "No shot you had to calculate that...";
+    return smallNumberResponse();
   }
-
-
-
-
+  
   const evilResponses = [
       "Congratulations, you've unlocked the secret to your misery",
       "You must be truly proud of your mathematical prowess",
@@ -81,6 +50,38 @@ function evilResponse(result) {
     ];
 
     return evilResponses[Math.floor(Math.random() * evilResponses.length)];
+}
+
+const smallNumberResponse = () => {
+  setTimeout(function () {
+    // Wait for 5 seconds before clearing the calculator and displaying the next message
+    document.getElementById('evil-response').textContent = "You've brought this upon yourself.";
+    clearResult();
+    const buttons = document.getElementsByTagName('button');
+    const log = document.getElementById('history-log');
+    const result = document.getElementById('result');
+    const title = document.querySelector('h1');
+
+    const allTags = [...buttons, log, result, title];
+
+    // Iterate through the buttons and hide them
+    for (let i = 0; i < allTags.length; i++) {
+      allTags[i].style.display = 'none';
+    }
+
+    // After 3 seconds, display the final message
+    setTimeout(function () {
+      document.getElementById('evil-response').textContent = "Bye";
+
+      // After 3 seconds, clear the message
+      setTimeout(function () {
+        document.getElementById('evil-response').textContent = "";
+      }, 1000);
+    }, 2000);
+  }, 3000);
+
+  // This is the initial message
+  return "No shot you had to calculate that...";
 }
 
 // //////////////////////////////////////////////////
